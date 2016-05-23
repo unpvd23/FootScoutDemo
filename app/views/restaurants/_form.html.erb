@@ -1,13 +1,18 @@
 <%= form_for(@restaurant, :html => { multipart: true }) do |f| %>
 
   <% if @restaurant.errors.any? %>
+
     <div id="error_explanation">
+
       <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
 
       <ul>
       <% @restaurant.errors.full_messages.each do |message| %>
+
         <li><%= message %></li>
+
       <% end %>
+      
       </ul>
     </div>
   <% end %>
@@ -35,5 +40,5 @@
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>
-  
+
 <% end %>
